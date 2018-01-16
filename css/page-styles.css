@@ -43,18 +43,30 @@ h4 {
 	color: #333;
 	font-weight: 400;
 	line-height: 0.1;
-	font-size: 1em;
+	font-size: .9rem;
 	padding-bottom: 30px;
 }
 
 a {
-	color: #999999;
+	color: #999;
 	text-decoration: none;
 	outline: none;
 }
 
 a:hover {
 	color: #000;
+}
+
+/*
+	layout of paintings in desktop mode
+	replacement for masonry
+*/
+.grid-container {
+	padding: 2% 5%;
+	display: grid;
+	grid-template-columns: 2fr 2fr;
+	grid-template-rows: auto;
+	grid-gap: 1rem;
 }
 
 .container > header {
@@ -75,26 +87,12 @@ a:hover {
 	letter-spacing: 0.5em;
 	padding: 0 0 0.6em 0.1em;
 	font-size: 1.3em;
-	color: #666;
+	color: #999;
 }
 
-.container > header > span span:hover:before {
-	content: attr(data-content);
-	text-transform: none;
-	text-indent: 0;
-	letter-spacing: 0;
-	font-weight: 300;
-	font-size: 110%;
-	padding: 0.8em 1em;
-	line-height: 1.2;
-	text-align: left;
-	left: auto;
-	margin-left: 4px;
-	position: absolute;
-	color: #333333;
-	background: #fff;
-}
-
+/*
+	back button styling
+*/
 .container > header nav {
 	float: right;
 	text-align: center;
@@ -109,7 +107,7 @@ a:hover {
 	background: #fff;
 	border-radius: 50%;
 	margin: 0 6em;
-	border: 4px solid #999;
+	border: 3px solid #999;
 }
 
 .container > header nav a > span {
@@ -118,7 +116,7 @@ a:hover {
 
 .container > header nav a:hover:before {
 	content: attr(data-info);
-	color: #999;
+	color: #666;
 	position: absolute;
 	width: 600%;
 	top: 120%;
@@ -139,7 +137,7 @@ a:hover {
 	font-variant: normal;
 	text-transform: none;
 	text-align: center;
-	color: #333;
+	color: #999;
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -195,5 +193,45 @@ a:hover {
 		position: relative;
 		left: 0px;
 
+	}
+}
+
+@media only screen and (max-width : 480px) {
+   /*
+	 	Smartphone view: 1 col
+	 */
+	 .grid-container {
+		 padding: 2rem;
+     grid-template-columns: 1fr;
+     grid-template-rows: auto;
+     grid-gap: .5rem;
+   }
+	 .item {
+		 display: flex;
+		 flex-direction: column;
+		 justify-content: center;
+		 align-items: center;
+	 }
+	 img {
+		 width: 90%;
+	 }
+}
+
+@media only screen and (max-width : 1050px) and (min-width : 651px) {
+   /*
+	 	Small desktop / ipad view, 1 col but can fill up more space
+	 */
+   .grid-container {
+		 padding: 2% 10%;
+     grid-template-columns: 3fr;
+     grid-template-rows: auto;
+     grid-gap: .7rem;
+   }
+
+	 .item {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 }
