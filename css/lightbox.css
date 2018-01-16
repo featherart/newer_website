@@ -9,7 +9,7 @@ body:after {
   top: 0;
   left: 0;
   z-index: 9999;
-  background-color: black;
+  background-color: rgba(255, 255, 255, 0.8);
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
   display: none;
@@ -29,7 +29,7 @@ body:after {
   position: absolute;
   top: 20px;
   display: block;
-  color: #fff;
+  color: transparent;
   font-weight: 200;
   font-size: 0.8em;
 }
@@ -51,7 +51,7 @@ body:after {
 
 .lb-outerContainer {
   position: relative;
-  /*background-color: white;*/
+  background-color: white;
   *zoom: 1;
   /*width: 250px;
   height: 250px;*/
