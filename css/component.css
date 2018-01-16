@@ -9,6 +9,13 @@
 	font-style: normal;
 } /* Made with http://icomoon.io/app */
 
+.grid-container {
+	padding: 5%;
+	display: grid;
+	grid-template-columns: 2fr 2fr;
+	grid-template-rows: auto;
+	grid-gap: 1rem;
+}
 /* General style */
 .grid-gallery ul {
 	list-style: none;
@@ -121,7 +128,6 @@
 	top: 2%;
 	left: 30%;
 	bottom: 5%;
-	/*margin: -280px 0 0 -330px;*/
 	visibility: hidden;
 }
 
@@ -133,11 +139,6 @@
 	content: '';
 	float: center;
 	width: fixed;
-	/*position: absolute;*/
-	/*width: 100%;
-	height: 100%;*/
-	/*top: 0;
-	left: 0;*/
 	background: rgba(255,255,255,0.8);
 	-webkit-transition: opacity 0.3s;
 	transition: opacity 0.3s;
@@ -192,7 +193,6 @@
 .slideshow nav span.nav-close {
 	top: 0;
 	right: 0;
-	/*padding: 0.5em 1em;*/
 	color: #333;
 }
 
@@ -351,54 +351,83 @@ span.nav-close:before {
 	transition: all 0.3s ease;
 }
 
-/* Example media queries */
-
-@media screen and (max-width: 55.1875em){
-
-	.cbp-spmenu-horizontal {
-		font-size: 75%;
-		height: 110px;
-	}
-
-	.cbp-spmenu-top {
-		top: -110px;
-	}
-
-	.cbp-spmenu-bottom {
-		bottom: -110px;
-	}
-
+@media only screen and (max-width : 480px) {
+   /* Smartphone view: 1 tile */
+   .text {
+    padding-left: 5%;
+    padding-right: 30%;
+   }
+   .box {
+      width: 90%;
+      padding-bottom: 90%;
+      padding-left: 30px;
+      text-align: center;
+   }
+   article p {
+      max-width: 85%;
+      padding-left: 15%;
+      padding-right: 5%;
+   }
+   .about img {
+      float: center;
+      padding: 20%;
+      padding-top: 5%;
+      width: fixed;
+   }
+}
+@media only screen and (max-width : 650px) and (min-width : 481px) {
+   /* Tablet view: 2 tiles */
+   .box {
+      width: 50%;
+      padding-bottom: 50%;
+   }
+   article p {
+      max-width: 100%;
+      text-align: justify;
+      line-height: 1.3;
+      padding-left: 15%;
+      padding-right: 15%;
+   }
+    .about img {
+      float: center;
+      width: fixed;
+      padding: 20%;
+      padding-top: 5%;
+   }
 }
 
-@media screen and (max-height: 26.375em){
-
-	.cbp-spmenu-vertical {
-		font-size: 90%;
-		width: 190px;
-	}
-
-	.cbp-spmenu-left,
-	.cbp-spmenu-push-toleft {
-		left: -190px;
-	}
-
-	.cbp-spmenu-right {
-		right: -190px;
-	}
-
-	.cbp-spmenu-push-toright {
-		left: 190px;
-	}
+@media only screen and (max-width : 480px) {
+   /* Smartphone view: 1 tile */
+	 .grid-container {
+		 padding: 2rem;
+     grid-template-columns: 1fr;
+     grid-template-rows: auto;
+     grid-gap: .5rem;
+   }
+	 .item {
+		 display: flex;
+		 flex-direction: column;
+		 justify-content: center;
+		 align-items: center;
+	 }
+	 img {
+		 width: 90%;
+	 }
 }
 
-@media screen and (max-width: 35em) {
-	.grid li {
-		width: 50%;
-	}
-}
+@media only screen and (max-width : 1050px) and (min-width : 651px) {
+   /* Small desktop / ipad view: 3 tiles */
+   .grid-container {
+		 padding: 2% 10%;
+     grid-template-columns: 3fr;
+     grid-template-rows: auto;
+     grid-gap: .7rem;
+   }
 
-@media screen and (max-width: 24em) {
-	.grid li {
-		width: 100%;
+	 .item {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 }
