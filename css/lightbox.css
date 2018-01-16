@@ -9,10 +9,14 @@ body:after {
   top: 0;
   left: 0;
   z-index: 9999;
-  background-color: rgba(255, 255, 255, 0.8);
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  background-color: rgba(255, 255, 255, 0.9);
+  /*filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);*/
   opacity: 0.8;
   display: none;
+}
+
+.lightboxOverlay.open {
+  color: #333;
 }
 
 .lightbox {
@@ -24,14 +28,24 @@ body:after {
   line-height: 0;
   font-weight: normal;
 }
-/* my additions */
-.lightbox.arrow {
-  position: absolute;
-  top: 20px;
-  display: block;
-  color: transparent;
+/* My addition - make arrows show up on white background
+   this class gets dynamically added to each image clicked
+   removed when clicked out
+   It needs to be added dyamically to follow user around page
+*/
+.arrow {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 30px;
+  background: #fff;
+  color: #666;
   font-weight: 200;
-  font-size: 0.8em;
+  font-size: 1rem;
+}
+.lightbox.visible {
+  color: #666;
 }
 
 .lightbox .lb-image {

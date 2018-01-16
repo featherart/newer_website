@@ -15,9 +15,6 @@
   <body>
     <div class="container">
       <header class="clearfix">
-        <div class="arrow lightbox">
-          ◀︎  arrow keys navigate  ▶︎
-        </div>
         <span>Acrylic Series</span>
         <nav>
           <a href="./index.html" class="bp-icon bp-icon-prev" data-info="home"><span>Back to Main</span></a>
@@ -91,20 +88,43 @@
     <script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/lightbox.js"></script>
     <script type="text/javascript">
-    $(function(){
-       // See if this is a touch device
-       if ('ontouchstart' in window)
-       {
-          // Set the correct [touchscreen] body class
-          $('body').removeClass('no-touch').addClass('touch');
+    $(function() {
+      /*
+       add arrows dynamically when lightbox gets opened
+       this allows arrows to follow user around page
+       also then the lightbox can be white rather than black
+      */
+      $(".item").click(function() {
+        if (!$(".lightbox").hasClass("arrow")) {
+          $(".lightbox").prepend('<div class="lightbox arrow">◀︎  click to navigate  ▶︎</div>');
+        }
+      });
 
-          // Add the touch toggle to show text when tapped
-          $('div.boxInner img').click(function(){
-             $(this).closest('.boxInner').toggleClass('touchFocus');
-          });
-       }
+      /*
+        otherwise there are tons of them
+      */
+      $("#lightbox").click(function() {
+        $(".arrow").remove();
+      });
+
+      $("#lightboxOverlay").click(function() {
+        $(".arrow").remove();
+      });
+
+      /*
+       See if this is a touch device, so
+       that lightbox can be opened with touch events
+      */
+      if ("ontouchstart" in window) {
+        // Set the correct [touchscreen] body class
+        $("body").removeClass("no-touch").addClass("touch");
+
+        // Add the touch toggle to show text when tapped
+        $("div.boxInner img").click(function() {
+          $(this).closest(".boxInner").toggleClass("touchFocus");
+        });
+      }
     });
     </script>
-
   </body>
 </html>
