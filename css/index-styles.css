@@ -223,8 +223,8 @@ body.no-touch .boxInner:hover .titleBox, body.touch .boxInner.touchFocus .titleB
 @media only screen and (max-width : 1050px) and (min-width : 651px) {
    /* Small desktop / ipad view: 3 tiles */
    .box {
-      width: 33.3%;
-      padding-bottom: 33.3%;
+      width: 50%;
+      padding-bottom: 50%;
    }
    .about img {
       padding: 10%;
