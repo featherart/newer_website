@@ -18,17 +18,6 @@
   animation-duration:1s;
 }
 
-@font-face {
-	font-family: 'bpicons';
-	src:url('../fonts/bpicons/bpicons.eot');
-	src:url('../fonts/bpicons/bpicons.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/bpicons/bpicons.woff') format('woff'),
-		url('../fonts/bpicons/bpicons.ttf') format('truetype'),
-		url('../fonts/bpicons/bpicons.svg#bpicons') format('svg');
-	font-weight: normal;
-	font-style: normal;
-} /* Made with http://icomoon.io/ */
-
 *, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 body, html { font-size: 100%; padding: 0; margin: 0;}
 
@@ -37,10 +26,10 @@ body, html { font-size: 100%; padding: 0; margin: 0;}
 .clearfix:after { clear: both; }
 
 body {
-    font-family: Trebuchet, Arial, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
 }
 h4 {
-	color: #333;
+	color: #666;
 	font-weight: 400;
 	line-height: 0.1;
 	font-size: .9rem;
@@ -57,6 +46,18 @@ a:hover {
 	color: #000;
 }
 
+.title {
+   display: inline-block;
+   margin-left: 20px;
+}
+
+.title img {
+  height: 8rem;
+}
+
+.reversed {
+  transform: rotate(180deg);
+}
 /*
 	layout of paintings in desktop mode
 	replacement for masonry
@@ -78,18 +79,19 @@ a:hover {
 }
 
 .container > header > span {
-	display: block;
-	position: absolute;
-	left: 140px;
+	display: inline-block;
 	z-index: 200;
 	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 0.5em;
 	padding: 0 0 0.6em 0.1em;
 	font-size: 1.3em;
-	color: #999;
+	color: #ccc;
 }
 
+.logo {
+  width: 6rem;
+}
 /*
 	back button styling
 */
@@ -112,63 +114,6 @@ a:hover {
 
 .container > header nav a > span {
 	display: none;
-}
-
-.container > header nav a:hover:before {
-	content: attr(data-info);
-	color: #666;
-	position: absolute;
-	width: 600%;
-	top: 120%;
-	text-align: right;
-	right: 0;
-	pointer-events: none;
-}
-
-.container > header nav a:hover {
-	background: #ccc;
-}
-
-.bp-icon:after {
-	font-family: 'bpicons';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	text-align: center;
-	color: #999;
-	-webkit-font-smoothing: antialiased;
-}
-
-.container > header nav .bp-icon:after {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	line-height: 2;
-	text-indent: 0;
-}
-
-.container > header nav a:hover:after {
-	color: #fff;
-}
-
-.bp-icon-next:after {
-	content: "\e000";
-}
-.bp-icon-drop:after {
-	content: "\e001";
-}
-.bp-icon-archive:after {
-	content: "\e002";
-}
-.bp-icon-about:after {
-	content: "\e003";
-}
-.bp-icon-prev:after {
-	content: "\e004";
 }
 
 @media screen and (max-width: 55em) {

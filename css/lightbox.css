@@ -1,6 +1,5 @@
 /* Preload images */
 body:after {
-  /*content: url(../img/close.png) url(../img/loading.gif) url(../img/prev.png) url(../img/next.png);*/
   display: none;
 }
 
@@ -10,7 +9,7 @@ body:after {
   left: 0;
   z-index: 9999;
   background-color: rgba(255, 255, 255, 0.9);
-  /*filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);*/
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
   display: none;
 }
@@ -34,15 +33,22 @@ body:after {
    It needs to be added dyamically to follow user around page
 */
 .arrow {
+  background: #fff;
+  font-family: Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
   position: relative;
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 30px;
-  background: #fff;
-  color: #666;
-  font-weight: 200;
-  font-size: 1rem;
+  color: #999;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.arrow span {
+  background: red;
+  max-width: 1rem;
 }
 .lightbox.visible {
   color: #666;
@@ -67,8 +73,6 @@ body:after {
   position: relative;
   background-color: white;
   *zoom: 1;
-  /*width: 250px;
-  height: 250px;*/
   margin: 0 auto;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -102,7 +106,6 @@ body:after {
   width: 32px;
   height: 32px;
   margin: 0 auto;
-  /*background: url(../img/loading.gif) no-repeat;*/
 }
 
 .lb-nav {
@@ -137,7 +140,6 @@ body:after {
   width: 34%;
   left: 0;
   float: left;
-  /*background: url(../img/prev.png) left 48% no-repeat;*/
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   -webkit-transition: opacity 0.6s;
@@ -155,7 +157,6 @@ body:after {
   width: 64%;
   right: 0;
   float: right;
-  /*background: url(../img/next.png) right 48% no-repeat;*/
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   -webkit-transition: opacity 0.6s;
@@ -171,7 +172,6 @@ body:after {
 
 .lb-dataContainer {
   margin: 0 auto;
-  /*padding-top: 5px;*/
   *zoom: 1;
   width: 100%;
   -moz-border-radius-bottomleft: 4px;
@@ -189,7 +189,6 @@ body:after {
 }
 
 .lb-data {
-  /*padding: 0 4px;*/
   color: #ccc;
 }
 
@@ -203,7 +202,7 @@ body:after {
 }
 
 .lb-data .lb-caption {
-  font-size: 13px;
+  font-size: .9rem;
   font-weight: 300;
   line-height: 1.2em;
   padding-left: 2%;
@@ -224,7 +223,6 @@ body:after {
   float: right;
   width: 30px;
   height: 30px;
-  /*background: url(../img/close.png) top right no-repeat;*/
   text-align: right;
   outline: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
