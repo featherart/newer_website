@@ -212,7 +212,7 @@
       */
       $(".item").click(function() {
         if (!$(".lightbox").hasClass("arrow")) {
-          $(".lightbox").prepend('<div class="lightbox arrow">◀︎  click to navigate  ▶︎</div>');
+          $(".lightbox").prepend('<div class="lightbox arrow"><span class="reversed">▹</span><span>▹</span></div>');
         }
       });
 
