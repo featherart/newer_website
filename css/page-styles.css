@@ -63,7 +63,11 @@ a:hover {
 }
 
 .container > header {
-  width: 50%;
+  /*width: 100%;*/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
 }
 
 /*
@@ -71,23 +75,19 @@ a:hover {
 	replacement for masonry
 */
 .grid-container {
-	padding: 2% 5%;
+	padding: 5%;
 	display: grid;
-	grid-template-columns: 2fr 2fr;
+	grid-template-columns: 1fr 1fr;
 	grid-template-rows: auto;
-	grid-gap: 1rem;
+	grid-row-gap: 1rem;
+  grid-column-gap: 1.5rem;
 }
 
-/*.container > header {
-	background: #fff;
-	width: 90%;
-	max-width: 69em;
-	margin: 0 auto;
-	padding: 2.875em 1.875em 1.875em;
-}*/
+img.smaller {
+  width: 85%;
+}
 
 .container > header > span {
-	display: inline-block;
 	z-index: 200;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -97,42 +97,9 @@ a:hover {
 	color: #ccc;
 }
 
-/*
-	back button styling
-*/
-/*.container > header nav {
-	float: right;
-	text-align: center;
-}*/
-
-/*.container > header nav a {
-	display: inline-block;
-	position: relative;
-	text-align: left;
-	width: 2.5em;
-	height: 2.5em;
-	background: #fff;
-	border-radius: 50%;
-	margin: 0 6em;
-	border: 3px solid #999;
-}*/
-
-/*.container > header nav a > span {
-	display: none;
-}*/
-
 @media screen and (max-width: 55em) {
-	span.bp-icon.bp-icon-about {
-		visibility: hidden;
-	}
-	.container > header h1,
 	.container > header nav {
 		float: none;
-	}
-
-	.container > header > span,
-	.container > header h1 {
-		text-align: center;
 	}
 
 	.container > header nav {
@@ -142,7 +109,6 @@ a:hover {
 	.container > header > span {
 		position: relative;
 		left: 0px;
-
 	}
 }
 
