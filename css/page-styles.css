@@ -64,7 +64,6 @@ a:hover {
 }
 
 .container > header {
-  /*width: 100%;*/
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -78,7 +77,6 @@ a:hover {
 .grid-container {
 	padding: 5%;
 	display: grid;
-  /*grid-template-columns: repeat(auto-fill, minmax(400px,2fr));*/
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: auto;
 	grid-column-gap: 1.5rem;
@@ -99,29 +97,51 @@ img.smaller {
 	text-transform: uppercase;
 	letter-spacing: 0.5em;
 	padding: 0 0 0.6em 0.1em;
-	font-size: 1.3em;
+	font-size: 1.3rem;
 	color: #ccc;
 }
 
 @media screen and (max-width: 55em) {
-	.container > header nav {
-		float: none;
-	}
+  .container > header > span {
+   font-size: 1rem;
+ }
 
-	.container > header nav {
-		margin: 0 auto;
-	}
+  .container > header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-	.container > header > span {
-		position: relative;
-		left: 0px;
-	}
+  .grid-container {
+    padding: 2rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: .5rem;
+  }
+  .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media only screen and (max-width : 480px) {
    /*
 	 	Smartphone view: 1 col
 	 */
+   .container > header > span {
+ 		font-size: 1rem;
+ 	}
+
+   .container > header {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+   }
+
 	 .grid-container {
 		 padding: 2rem;
      grid-template-columns: 1fr;
@@ -141,11 +161,22 @@ img.smaller {
 
 @media only screen and (max-width : 1050px) and (min-width : 651px) {
    /*
-	 	Small desktop / ipad view, 1 col but can fill up more space
+	 	Small desktop / ipad view, 1 col, centered header
 	 */
+   .container > header > span {
+     font-size: 1.1rem;
+   }
+
+   .container > header {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+   }
+
    .grid-container {
 		 padding: 2% 10%;
-     grid-template-columns: 3fr;
+     grid-template-columns: 1fr;
      grid-template-rows: auto;
      grid-gap: .7rem;
    }
