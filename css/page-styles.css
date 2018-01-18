@@ -13,9 +13,9 @@
   -moz-animation-fill-mode:forwards;
   animation-fill-mode:forwards;
 
-  -webkit-animation-duration:1s;
-  -moz-animation-duration:1s;
-  animation-duration:1s;
+  -webkit-animation-duration:2s;
+  -moz-animation-duration:2s;
+  animation-duration:2s;
 }
 
 *, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
@@ -46,18 +46,26 @@ a:hover {
 	color: #000;
 }
 
-.title {
-   display: inline-block;
-   margin-left: 20px;
-}
-
-.title img {
-  height: 8rem;
+.logo {
+  width: 6rem;
+  margin-left: 5%;
 }
 
 .reversed {
   transform: rotate(180deg);
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container > header {
+  width: 50%;
+}
+
 /*
 	layout of paintings in desktop mode
 	replacement for masonry
@@ -70,13 +78,13 @@ a:hover {
 	grid-gap: 1rem;
 }
 
-.container > header {
+/*.container > header {
 	background: #fff;
 	width: 90%;
 	max-width: 69em;
 	margin: 0 auto;
 	padding: 2.875em 1.875em 1.875em;
-}
+}*/
 
 .container > header > span {
 	display: inline-block;
@@ -89,18 +97,15 @@ a:hover {
 	color: #ccc;
 }
 
-.logo {
-  width: 6rem;
-}
 /*
 	back button styling
 */
-.container > header nav {
+/*.container > header nav {
 	float: right;
 	text-align: center;
-}
+}*/
 
-.container > header nav a {
+/*.container > header nav a {
 	display: inline-block;
 	position: relative;
 	text-align: left;
@@ -110,11 +115,11 @@ a:hover {
 	border-radius: 50%;
 	margin: 0 6em;
 	border: 3px solid #999;
-}
+}*/
 
-.container > header nav a > span {
+/*.container > header nav a > span {
 	display: none;
-}
+}*/
 
 @media screen and (max-width: 55em) {
 	span.bp-icon.bp-icon-about {
